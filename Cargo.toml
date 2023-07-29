@@ -72,14 +72,10 @@ indexmap = { version = "2.2" }
 # hnsw_rs = {git = "https://github.com/jean-pierreBoth/hnswlib-rs", features=["simdeez_f"]}
 # hnsw_rs = { path = "../hnswlib-rs" }
 
+
 # hnsw_rs =  {git = "https://gitlab.com/jpboth/hnswlib-rs.git"}
 #hnsw_rs = {path = "../hnswlib-rs", features = ["simdeez_f"]}
 hnsw_rs = { version = "0.2.1" }
-
-[target.'cfg(target_os = "x86_64")'.dependencies]
-hnsw_rs = { version = "0.2.1", features = ["simdeez_f"] }
-
-
 # rand utilis
 rand = { version = "0.8" }
 rand_distr = { version = "0.4" }
@@ -132,3 +128,6 @@ openblas-static = ["ndarray/blas", "ndarray-linalg/openblas-static"]
 openblas-system = ["ndarray/blas", "ndarray-linalg/openblas-system"]
 macos-accelerate = ["blas-src", "ndarray/blas"]
 features = ["simdeez_f"]
+
+[target.'cfg(target_os = "x86_64")'.dependencies]
+hnsw_rs = { version = "0.2.1", features = ["simdeez_f"] }
